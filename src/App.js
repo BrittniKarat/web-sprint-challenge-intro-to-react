@@ -80,7 +80,10 @@ const App = () => {
       {data.map(each => 
         <CharacterData 
         character={each.name} 
-        key={each.mass}/>)}
+        key={each.mass}
+        birth_year={each.birth_year}
+        films={each.films.map(ea=> <ul> {ea} </ul>)}
+        />)}
 
     </AppDiv>
   );

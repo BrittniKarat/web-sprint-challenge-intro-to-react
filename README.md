@@ -87,8 +87,8 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
   -
 
 1. Describe props.
-  - Props are a read-only container for the data in the state
+  - Props are a read-only placeholder for the data in the state
 
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
-  - Side effects are things such as timers, logging, Api, etc. that 
-
+  - Side effects are things such as timers, logging, Api, etc. that affects something outside the scope of the function being executed.
+  - In order to sync the effects, you need to pass in an array as the second argument to instruct the effect when to execute

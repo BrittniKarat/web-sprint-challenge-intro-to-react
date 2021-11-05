@@ -1,5 +1,5 @@
 // Write your Character component here
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Spinner } from "reactstrap";
 // import Details from "./Details"
@@ -40,11 +40,15 @@ const CharacterStyles = styled.div`
 
 
 const CharacterData = (props) => {
+    const [clicked, setClicked] = useState(0);
+    const basic = <p>{props.character}</p>;
+    const info = <p> {props.character} was born in the year {props.birth_year}.</p>;
+    const films = <p> {props.character} has been in the following films: <br/> {props.films} </p>;
     return (
-        <CharacterStyles >
-            <Spinner color="warning" type="grow" size='sm'/>
-            <p>{props.character}</p>
-            <Spinner color="warning" type="grow" size='sm'/>
+        <CharacterStyles onClick={() => setClicked(clicked + 1)}>
+            {clicked === 0 ? <Spinner color="warning" type="grow" size='sm'/> : null }
+            { clicked === 0 ? basic : ( clicked === 1 ? info :( clicked === 2 ? films : setClicked(0))) }
+            {clicked === 0 ? <Spinner color="warning" type="grow" size='sm'/> : null }
         </CharacterStyles>
     )
 }
