@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 // Importing axios to GET API data
 import axios from "axios";
-// Importing CharacterData to put on the DOM
+// Importing CharacterData and Details to put on the DOM
 import CharacterData from "./components/Character";
+import Details from "./components/Details";
 // Importing styling
 import styled, { ThemeProvider } from "styled-components";
 import theme from "./components/theme";
@@ -69,7 +70,6 @@ const App = () => {
     axios
       .get(`https://swapi.dev/api/people`)
       .then((res) => {
-        console.log(res);
         setData(res.data);
       })
       .catch((err) => console.error(err));
@@ -78,12 +78,31 @@ const App = () => {
   return (
     <AppDiv className="App">
       <h1 className="Header">Characters</h1>
-      {data.map((each) => (
-        <CharacterData character={each.name} key={each.mass} />
-      ))}
-      {}
+      {data.map(each => {
+        <CharacterData 
+        className={each}
+        character={each.name} 
+        key={each.mass}
+        onClick={() => {
+          if('className' === each){
+            (<Details
+              name={each.name} 
+              birth_year={each.birth_year}
+              hair_color={each.hair_color}
+              eye_color={each.eye_color}
+              skin_color={each.skin_color}
+              height={each.height}
+              mass={each.mass} />)
+          }
+        }
+        }
+        />
+
+
+      })}
     </AppDiv>
   );
+  
 };
 
 export default App;

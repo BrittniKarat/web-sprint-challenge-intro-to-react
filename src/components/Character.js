@@ -40,14 +40,15 @@ const CharacterStyles = styled.div`
 
 
 const CharacterData = (props) => {
+    const [person, setPerson] = useState(null);
 
     return (
-        <CharacterStyles>
-            <Spinner color="warning" type="grow" size='sm' />
+        <CharacterStyles onClick={() => setPerson(props.character)}>
+            <Spinner color="warning" type="grow" size='sm'  />
             {props.character}
             <Spinner color="warning" type="grow" size='sm' />
-            {/* {<Details key={props.key}/>} */}
         </CharacterStyles>
+        
     )
 }
 
