@@ -81,13 +81,13 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
   - React JS is a Javascript library
   - Through it's use of the virtual DOM, it can update *only* the changes, instead of the whole DOM for a single change
-  
+  - It also allows us to use states, props, and side effects to build interactive web pages
 
 1. Describe component state.
-  -
+  - The current, changable, state of the component, managed within itself, to keep track of information between renderings
 
 1. Describe props.
-  - Props are a read-only placeholder for the data in the state
+  - Props are a read-only placeholder for the data in the state. They are the properties that get passed to the component, like parameters.
 
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
   - Side effects are things such as timers, logging, Api, etc. that affects something outside the scope of the function being executed.
