@@ -1,8 +1,8 @@
 // Write your Character component here
 import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import theme from './theme';
-import reactStrap, { Spinner, PopoverBody, Popover } from "reactstrap";
+import { Spinner } from "reactstrap";
+import Details from "./Details"
 
 const CharacterStyles = styled.div`
    display: flex;
@@ -35,22 +35,18 @@ const CharacterStyles = styled.div`
       padding: 5% 0;
       margin: 3% 0;
    }
+  
 `
 
 
 const CharacterData = (props) => {
-    const [dataOn, setDataOn] = useState(false);
-
-    const toggle = () => setDataOn(!dataOn);
-    
 
     return (
-        <CharacterStyles 
-        id='button'
-        >
-            <Spinner className={dataOn} color="warning" type="grow" size='sm' />
+        <CharacterStyles>
+            <Spinner color="warning" type="grow" size='sm' />
             {props.character}
             <Spinner color="warning" type="grow" size='sm' />
+            {/* {<Details key={props.key}/>} */}
         </CharacterStyles>
     )
 }
