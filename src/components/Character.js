@@ -1,9 +1,10 @@
 // Write your Character component here
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import theme from './theme';
 
 const CharacterStyles = styled.div`
-    color:white;
+   color: ${pr => pr.theme.primaryColor};
 `
 
 

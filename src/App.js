@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import theme from './components/theme';
 import './App.css';
 
 import CharacterData from './components/Character';
