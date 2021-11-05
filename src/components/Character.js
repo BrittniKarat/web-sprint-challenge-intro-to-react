@@ -1,8 +1,8 @@
 // Write your Character component here
-import React, { useState, useEffect } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import { Spinner } from "reactstrap";
-import Details from "./Details"
+// import Details from "./Details"
 
 const CharacterStyles = styled.div`
    display: flex;
@@ -40,15 +40,12 @@ const CharacterStyles = styled.div`
 
 
 const CharacterData = (props) => {
-    const [person, setPerson] = useState(null);
-
     return (
-        <CharacterStyles onClick={() => setPerson(props.character)}>
-            <Spinner color="warning" type="grow" size='sm'  />
-            {props.character}
-            <Spinner color="warning" type="grow" size='sm' />
+        <CharacterStyles >
+            <Spinner color="warning" type="grow" size='sm'/>
+            <p>{props.character}</p>
+            <Spinner color="warning" type="grow" size='sm'/>
         </CharacterStyles>
-        
     )
 }
 

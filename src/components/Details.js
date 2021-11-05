@@ -1,6 +1,5 @@
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import React from 'react';
+import styled  from 'styled-components';
 
 
 const StyledDetails = styled.div`
@@ -30,4 +29,4 @@ const Details = (props) => {
 
 }
 
-export default Details;
+// export default Details;
