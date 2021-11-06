@@ -3,35 +3,37 @@ import styled from 'styled-components';
 import { Spinner } from "reactstrap";
 
 const CharacterStyles = styled.div`
-   display: flex;
-   justify-content: center;
    align-items: center;
-   padding: 1% 0;
-   color: ${pr => pr.theme.primaryColor};
    background-color: ${pr => pr.theme.secondaryColor};
-   width: 40%;
-   margin: 1% 0;
    border-radius: 4px;
+   color: ${pr => pr.theme.primaryColor};
+   display: flex;
    font-size: 3rem;
+   justify-content: center;
+   margin: 1% 0;
+   padding: 1% 0;
+   width: 40%;
 
    @media(max-width:1100px){
-      width: 60%;
       font-size: 2.3rem;
+      margin: 2% 0;
       padding: 3.5% 0;
-      margin: 2% 0;
+      width: 60%;
    }
+
    @media(max-width:800px){
-       width: 67%;
-      font-size: 2rem;
-      padding: 5% 0;
-      margin: 2% 0;
+       font-size: 2rem;
+       margin: 2% 0;
+       padding: 5% 0;
+       width: 67%; 
    }
+
    @media(max-width:500px){
-       width: 60%;
       font-size: 1.5rem;
       font-weight: bold;
-      padding: 5% 0;
       margin: 3% 0;
+      padding: 5% 0;
+      width: 60%;
    }
   
 `
@@ -39,9 +41,11 @@ const CharacterStyles = styled.div`
 
 const CharacterData = (props) => {
     const [clicked, setClicked] = useState(0);
+    
     const basic = <p>{props.character}</p>;
     const info = <p> {props.character} was born in the year {props.birth_year}.</p>;
     const films = <div> {props.character} has been in the following films: <br/> {props.films.map(ea=> <ul key={ea}> {ea} </ul>)} </div>;
+    
     return (
         <CharacterStyles onClick={() => setClicked(clicked + 1)}>
             {clicked === 0 ? <Spinner color="warning" type="grow" size='sm'/> : null }
@@ -50,6 +54,5 @@ const CharacterData = (props) => {
         </CharacterStyles>
     )
 }
-
 
 export default CharacterData;
